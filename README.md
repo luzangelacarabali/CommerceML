@@ -17,9 +17,25 @@ Este proyecto aplica **aprendizaje automático** para predecir si un producto li
 │   ├── 01_EDA_and_cleaning.ipynb     # Análisis exploratorio y limpieza de datos
 │   ├── 02_model_training.ipynb       # Análisis exploratorio, preprocesamiento y modelado
 ├── model/                           # Carpeta para modelos entrenados
+├── drive/                           # Carpeta para datos y modelos en Google Drive
+│   ├── data/                        # Datos originales y procesados
+│   ├── model/                       # Modelos entrenados en Google Drive
 ├── README.md                        # Descripción completa del proyecto
 ├── .gitignore                       # gitignore
-````
+```
+
+---
+
+## 💻 Drive
+
+Los datos del proyecto están disponibles en Google Drive. Puedes acceder a ellos a través del siguiente enlace:
+
+[**Accede al proyecto en Google Drive**](https://drive.google.com/drive/folders/1EO0Ey5X1gbV8skhZj6cEYFcPZkwrY3Nk?usp=sharing)
+
+Dentro de Google Drive encontrarás:
+
+* **Carpeta `data/`**: Contiene los archivos de datos originales y procesados.
+* **Carpeta `model/`**: Contiene los modelos entrenados.
 
 ---
 
@@ -33,6 +49,8 @@ El dataset contiene **53 columnas** que describen cada publicación de producto.
 
 > 🎯 Variable objetivo: `condition` (`new` o `used`)
 
+Los archivos `model/datos_limpios.csv` y `datos/MLA_100k.jsonlines` fueron eliminados debido a restricciones de tamaño en GitHub (>100 MB). Los datos están disponibles en Google Drive para su uso y manejo consciente.
+
 ---
 
 ## 🔎 Metodología
@@ -43,9 +61,7 @@ El dataset contiene **53 columnas** que describen cada publicación de producto.
 * Detección de valores faltantes y outliers
 * Visualizaciones: histogramas, diagramas de caja, matriz de correlación
 
-  
 ![image](https://github.com/user-attachments/assets/2a9faa28-c983-467d-93dd-4a3a7ac96b85)
-
 
 ---
 
@@ -104,9 +120,7 @@ Las 10 variables más importantes según Random Forest:
 9. `shipping_local_pick_up` (0.69%)
 10. `category_id_1227` (0.56%)
 
-    
 ![image](https://github.com/user-attachments/assets/ac70d029-387f-4450-821c-0c5002e48e1a)
-
 
 ---
 
@@ -132,10 +146,7 @@ Este modelo puede aplicarse para:
 * Optimizar la visibilidad de productos
 * Ajustar precios y estrategias de venta
 
-  
 ![image](https://github.com/user-attachments/assets/eb115944-3e21-4dce-9a23-1341fe3d64b2)
-
-
 
 ---
 
@@ -188,11 +199,5 @@ cd CommerceML
 
 **Luz Ángela Carabalí Mulato**
 📧 [@luzangelacarabli](https://github.com/luzangelacarabali)
-
----
-
-## 📎 Notas Adicionales
-
-> Los archivo `model/datos_limpios.csv` y `datos/MLA_100k.jsonlines` fueron eliminados debido a restricciones de tamaño en GitHub (>100 MB). Puedes solicitar una copia vía Drive a mi correo: [angela2006mulato@gmail.com](mailto:angela2006mulato@gmail.com).
 
 
