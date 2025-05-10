@@ -153,17 +153,13 @@ Este modelo puede aplicarse para:
 ## ⚠️ Limitaciones
 
 * Posible **desbalance de clases**
-* **Sobreajuste** sin optimización
-* Algunas variables podrían ser eliminadas
 
 ---
 
 ## 💡 Recomendaciones
 
 * Usar `GridSearchCV` para afinar hiperparámetros
-* Incluir `ROC-AUC` y matriz de confusión
 * Evaluar con nuevos datos externos
-* Simplificar el modelo eliminando variables poco relevantes
 
 ---
 
