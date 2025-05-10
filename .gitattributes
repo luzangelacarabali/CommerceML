@@ -1,3 +1,4 @@
+*.jsonlines filter=lfs diff=lfs merge=lfs -text
 datos/*.csv filter=lfs diff=lfs merge=lfs -text
 datos/*.jsonlines filter=lfs diff=lfs merge=lfs -text
 datos/*.csv !text !filter !merge !diff
