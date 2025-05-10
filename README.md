@@ -17,7 +17,6 @@ Este proyecto aplica **aprendizaje automático** para predecir si un producto li
 │   ├── 01_EDA_and_cleaning.ipynb     # Análisis exploratorio y limpieza de datos
 │   ├── 02_model_training.ipynb       # Análisis exploratorio, preprocesamiento y modelado
 ├── model/                           # Carpeta para modelos entrenados
-├── data/                            # Carpeta para los datos utilizados
 ├── README.md                        # Descripción completa del proyecto
 ├── .gitignore                       # gitignore
 ````
