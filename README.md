@@ -43,6 +43,8 @@ El dataset contiene **53 columnas** que describen cada publicación de producto.
 * Evaluación del balance de clases (`condition`)
 * Detección de valores faltantes y outliers
 * Visualizaciones: histogramas, diagramas de caja, matriz de correlación
+
+  
 ![image](https://github.com/user-attachments/assets/2a9faa28-c983-467d-93dd-4a3a7ac96b85)
 
 
@@ -102,6 +104,8 @@ Las 10 variables más importantes según Random Forest:
 8. `last_updated_month` (1.02%)
 9. `shipping_local_pick_up` (0.69%)
 10. `category_id_1227` (0.56%)
+
+    
 ![image](https://github.com/user-attachments/assets/ac70d029-387f-4450-821c-0c5002e48e1a)
 
 
@@ -128,6 +132,8 @@ Este modelo puede aplicarse para:
 * Mejorar las búsquedas del usuario
 * Optimizar la visibilidad de productos
 * Ajustar precios y estrategias de venta
+
+  
 ![image](https://github.com/user-attachments/assets/eb115944-3e21-4dce-9a23-1341fe3d64b2)
 
 
