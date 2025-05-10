@@ -1,4 +1,7 @@
 *.jsonlines filter=lfs diff=lfs merge=lfs -text
+*.csv filter=lfs diff=lfs merge=lfs -text
+model/datos_limpios.csv filter=lfs diff=lfs merge=lfs -text
+datos/MLA_100k.jsonlines filter=lfs diff=lfs merge=lfs -text
 datos/*.csv filter=lfs diff=lfs merge=lfs -text
 datos/*.jsonlines filter=lfs diff=lfs merge=lfs -text
 datos/*.csv !text !filter !merge !diff
