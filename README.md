@@ -8,17 +8,19 @@ Este proyecto aplica **aprendizaje automático** para predecir si un producto li
 * Entrenamiento y evaluación de modelos
 * Identificación de variables clave
 
-> 📊 **Objetivo**: Clasificar de forma automática los productos según su condición y entender qué factores más influyen en dicha clasificación.
-
 ---
 
 ## 📂 Estructura del Repositorio
 
 ```bash
-├── 02_model_training.ipynb   # Análisis exploratorio, preprocesamiento y modelado
-├── README.md                 # Descripción completa del proyecto
-├── requirements.txt          # Lista de dependencias
-```
+├── cuderno/
+│   ├── 01_EDA_and_cleaning.ipynb     # Análisis exploratorio y limpieza de datos
+│   ├── 02_model_training.ipynb       # Análisis exploratorio, preprocesamiento y modelado
+├── model/                           # Carpeta para modelos entrenados
+├── data/                            # Carpeta para los datos utilizados
+├── README.md                        # Descripción completa del proyecto
+├── requirements.txt                 # Lista de dependencias
+````
 
 ---
 
@@ -41,10 +43,8 @@ El dataset contiene **53 columnas** que describen cada publicación de producto.
 * Evaluación del balance de clases (`condition`)
 * Detección de valores faltantes y outliers
 * Visualizaciones: histogramas, diagramas de caja, matriz de correlación
+![image](https://github.com/user-attachments/assets/2a9faa28-c983-467d-93dd-4a3a7ac96b85)
 
-![image](https://github.com/user-attachments/assets/6402166d-7373-43fb-9faf-d785c11464e8)
-
-```
 
 ---
 
@@ -102,8 +102,7 @@ Las 10 variables más importantes según Random Forest:
 8. `last_updated_month` (1.02%)
 9. `shipping_local_pick_up` (0.69%)
 10. `category_id_1227` (0.56%)
-
-![image](https://github.com/user-attachments/assets/474f8a8f-d2ca-4cfe-8605-b85a9f348d4d)
+![image](https://github.com/user-attachments/assets/ac70d029-387f-4450-821c-0c5002e48e1a)
 
 
 ---
@@ -129,8 +128,9 @@ Este modelo puede aplicarse para:
 * Mejorar las búsquedas del usuario
 * Optimizar la visibilidad de productos
 * Ajustar precios y estrategias de venta
-  
-![image](https://github.com/user-attachments/assets/e4dcb57b-2617-4499-a9ea-ae5166d5043c)
+![image](https://github.com/user-attachments/assets/eb115944-3e21-4dce-9a23-1341fe3d64b2)
+
+
 
 ---
 
@@ -186,17 +186,10 @@ cd CommerceML
 
 ---
 
-Claro, aquí tienes la sección **Notas Adicionales** actualizada con la mención de la eliminación de los archivos:
-
----
-
 ## 📎 Notas Adicionales
 
->  Los archivo `model/datos_limpios.csv` y `datos/MLA_100k.jsonlines` fueron eliminados debido a restricciones de tamaño en GitHub (>100 MB). Puedes solicitar una copia vía Drive .
+> Los archivo `model/datos_limpios.csv` y `datos/MLA_100k.jsonlines` fueron eliminados debido a restricciones de tamaño en GitHub (>100 MB). Puedes solicitar una copia vía Drive a mi correo: [angela2006mulato@gmail.com](mailto:angela2006mulato@gmail.com).
 
-
-
-
-
+```
 
 
