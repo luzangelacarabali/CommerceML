@@ -170,3 +170,4 @@ Autor
 
 Luz Ángela Carabalí Mulato (@luzangelacarabli)
 
+Remove-Item -Force model/datos_limpios.csv
