@@ -190,6 +190,4 @@ cd CommerceML
 
 > Los archivo `model/datos_limpios.csv` y `datos/MLA_100k.jsonlines` fueron eliminados debido a restricciones de tamaño en GitHub (>100 MB). Puedes solicitar una copia vía Drive a mi correo: [angela2006mulato@gmail.com](mailto:angela2006mulato@gmail.com).
 
-```
-
 
