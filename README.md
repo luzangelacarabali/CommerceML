@@ -1,173 +1,202 @@
-Análisis Predictivo de Condición de Productos en una Tienda de Comercio Electrónico
-Introducción
-Este proyecto utiliza aprendizaje automático para predecir si un producto listado en una plataforma de comercio electrónico es nuevo o usado (condition). A través de un conjunto de datos con información detallada sobre los listings, se implementa un RandomForestClassifier dentro de un pipeline que incluye preprocesamiento, entrenamiento y evaluación, identificando las características clave que influyen en la clasificación.
-Estructura del Repositorio
+# 🛍️ Análisis Predictivo de Condición de Productos en una Tienda de Comercio Electrónico
 
-02_model_training.ipynb: Notebook con el código para el análisis exploratorio de datos (EDA), preprocesamiento, entrenamiento y evaluación de modelos.
-README.md: Este archivo, con la descripción del proyecto, análisis, resultados y conclusiones.
+## 📌 Introducción
 
-Conjunto de Datos
-El conjunto de datos contiene 53 columnas con información sobre listings en la tienda de comercio electrónico, incluyendo:
+Este proyecto aplica **aprendizaje automático** para predecir si un producto listado en una tienda de comercio electrónico es **nuevo** o **usado** (`condition`). A partir de un conjunto de datos con información detallada de los listings, se construye un `RandomForestClassifier` dentro de un pipeline con:
 
-Variables numéricas: base_price, price, initial_quantity, sold_quantity, available_quantity, entre otras.
-Variables categóricas: warranty, condition, category_id, listing_type_id, etc.
-Variables booleanas: shipping_local_pick_up, has_discount, accepts_online_payment.
+* Preprocesamiento de datos
+* Entrenamiento y evaluación de modelos
+* Identificación de variables clave
 
-La variable objetivo es condition, que indica si el producto es "new" (nuevo) o "used" (usado).
-Metodología
-Análisis Exploratorio de Datos (EDA)
-Se realizó un análisis exploratorio para identificar patrones, valores faltantes y correlaciones:
+> 📊 **Objetivo**: Clasificar de forma automática los productos según su condición y entender qué factores más influyen en dicha clasificación.
 
-Se verificó la distribución de condition para evaluar el balance de clases.
-Se analizaron valores faltantes en columnas clave (price, initial_quantity, warranty).
-Se generaron visualizaciones (histogramas, diagramas de caja, matrices de correlación) para entender relaciones entre variables.
-Se excluyeron columnas irrelevantes o redundantes.
+---
 
-Preprocesamiento
-Se utilizó un ColumnTransformer para manejar diferentes tipos de variables:
+## 📂 Estructura del Repositorio
 
-Numéricas: Imputación con la mediana (SimpleImputer) y escalado con StandardScaler.
-Categóricas: Imputación con "missing" (SimpleImputer) y codificación con OneHotEncoder.
-Booleanas: Imputación con el valor más frecuente (SimpleImputer).
+```bash
+├── 02_model_training.ipynb   # Análisis exploratorio, preprocesamiento y modelado
+├── README.md                 # Descripción completa del proyecto
+├── requirements.txt          # Lista de dependencias
+```
 
-Modelos Evaluados
-Se compararon varios modelos de clasificación para predecir condition:
+---
 
-Logistic Regression
-K-Nearest Neighbors (KNN)
-Support Vector Machine (SVM)
-Decision Tree
-Random Forest
-Multi-Layer Perceptron (MLP)
-XGBoost
+## 🧾 Conjunto de Datos
 
-Métricas de Evaluación
-Los modelos se evaluaron con:
+El dataset contiene **53 columnas** que describen cada publicación de producto. Algunos ejemplos:
 
-Accuracy: Proporción de predicciones correctas.
-Precision: Proporción de predicciones positivas correctas.
-Recall: Proporción de casos positivos identificados.
-F1 Score: Media armónica de precisión y recall.
+* **Numéricas**: `base_price`, `price`, `initial_quantity`, `sold_quantity`
+* **Categóricas**: `warranty`, `condition`, `category_id`, `listing_type_id`
+* **Booleanas**: `shipping_local_pick_up`, `has_discount`, `accepts_online_payment`
 
-Resultados
-Comparación de Modelos
-La siguiente tabla resume el desempeño de los modelos:
+> 🎯 Variable objetivo: `condition` (`new` o `used`)
 
+---
 
+## 🔎 Metodología
 
-Model
-Accuracy
-Precision
-Recall
-F1 Score
+### 1. Análisis Exploratorio de Datos (EDA)
 
+* Evaluación del balance de clases (`condition`)
+* Detección de valores faltantes y outliers
+* Visualizaciones: histogramas, diagramas de caja, matriz de correlación
 
+![image](https://github.com/user-attachments/assets/6402166d-7373-43fb-9faf-d785c11464e8)
 
-Logistic Regression
-0.816000
-0.817911
-0.816000
-0.816249
+```
 
+---
 
-KNN
-0.814889
-0.819502
-0.814889
-0.815120
+### 2. Preprocesamiento
 
+Uso de `ColumnTransformer` para tratar los distintos tipos de datos:
 
-SVM
-0.805944
-0.811678
-0.805944
-0.806142
+| Tipo        | Imputación            | Transformación   |
+| ----------- | --------------------- | ---------------- |
+| Numéricas   | Mediana               | `StandardScaler` |
+| Categóricas | Relleno con "missing" | `OneHotEncoder`  |
+| Booleanas   | Valor más frecuente   | Ninguna          |
 
+---
 
-Decision Tree
-0.803333
-0.807832
-0.803333
-0.803582
+### 3. Modelos Evaluados
 
+Se entrenaron y compararon los siguientes algoritmos:
 
-Random Forest
-0.824000
-0.829866
-0.824000
-0.824177
+* Logistic Regression
+* K-Nearest Neighbors (KNN)
+* Support Vector Machine (SVM)
+* Decision Tree
+* Random Forest ✅
+* Multi-Layer Perceptron (MLP)
+* XGBoost
 
+---
 
-MLP
-0.813667
-0.817757
-0.813667
-0.813914
+## 📈 Evaluación de Modelos
 
+| Modelo              | Accuracy  | Precision  | Recall    | F1 Score   |
+| ------------------- | --------- | ---------- | --------- | ---------- |
+| Logistic Regression | 0.816     | 0.8179     | 0.816     | 0.8162     |
+| KNN                 | 0.8149    | 0.8195     | 0.8149    | 0.8151     |
+| SVM                 | 0.8059    | 0.8116     | 0.8059    | 0.8061     |
+| Decision Tree       | 0.8033    | 0.8078     | 0.8033    | 0.8035     |
+| **Random Forest**   | **0.824** | **0.8298** | **0.824** | **0.8241** |
+| MLP                 | 0.8137    | 0.8178     | 0.8137    | 0.8139     |
+| XGBoost             | 0.8106    | 0.8270     | 0.8106    | 0.8100     |
 
-XGBoost
-0.810611
-0.827057
-0.810611
-0.810065
+---
+
+## 🌟 Importancia de las Características
+
+Las 10 variables más importantes según Random Forest:
+
+1. `initial_quantity` (11.66%)
+2. `available_quantity` (11.07%)
+3. `price` (8.33%)
+4. `base_price` (7.73%)
+5. `sold_quantity` (4.87%)
+6. `warranty_Sin garantía` (2.37%)
+7. `date_created_month` (1.18%)
+8. `last_updated_month` (1.02%)
+9. `shipping_local_pick_up` (0.69%)
+10. `category_id_1227` (0.56%)
+
+![image](https://github.com/user-attachments/assets/474f8a8f-d2ca-4cfe-8605-b85a9f348d4d)
 
 
-Observación: Random Forest obtuvo el mejor desempeño, con un Accuracy de 0.824, Precision de 0.829, Recall de 0.824 y F1 Score de 0.824.
-Importancia de las Características (Random Forest)
-El modelo Random Forest identificó las características más influyentes para predecir la condición del producto:
+---
 
-initial_quantity (11.66%): Cantidad inicial de productos listados.
-available_quantity (11.07%): Cantidad disponible para la venta.
-price (8.33%): Precio del producto.
-base_price (7.73%): Precio base del producto.
-sold_quantity (4.87%): Cantidad vendida.
-warranty_Sin garantía (2.37%): Ausencia de garantía.
-date_created_month (1.18%): Mes de creación del listing.
-last_updated_month (1.02%): Mes de última actualización.
-shipping_local_pick_up (0.69%): Opción de recolección local.
-category_id_1227 (0.56%): Categoría específica (posiblemente revistas o coleccionables).
+## 🧠 Análisis
 
-Estas características destacan la importancia de la disponibilidad, el precio y la garantía en la clasificación.
-Análisis
+* **Disponibilidad y Precio**: Mayor disponibilidad y precios más estables en productos nuevos.
+* **Garantía**: Su ausencia es más común en productos usados.
+* **Temporalidad**: Listings más recientes tienden a ser nuevos.
+* **Categoría y Logística**: Variables con menor impacto.
 
-Disponibilidad y Precio: initial_quantity, available_quantity, price y base_price sugieren que los productos nuevos tienen mayor stock y precios más estables, mientras que los usados presentan menor disponibilidad o precios variables.
-Garantía: La ausencia de garantía (warranty_Sin garantía) es relevante, ya que los productos usados suelen carecer de ella.
-Factores Temporales: date_created_month y last_updated_month indican tendencias estacionales o diferencias en la antigüedad de los listings.
-Categorías y Logística: category_id_1227 y shipping_local_pick_up tienen un impacto menor, posiblemente ligado a tipos específicos de productos.
+---
 
-Conclusión
-El modelo Random Forest es el más adecuado para predecir si un producto es nuevo o usado, con un Accuracy de 0.824 y un F1 Score de 0.824, superando a modelos como Logistic Regression y XGBoost. Las características clave (initial_quantity, available_quantity, price, base_price, warranty_Sin garantía) proporcionan información valiosa para clasificar productos y optimizar listings.
-Limitaciones
+## ✅ Conclusión
 
-Desbalance de Clases: Si condition está desbalanceada, el modelo podría sesgarse hacia la clase mayoritaria. Requiere verificación con una matriz de confusión.
-Sobreajuste: Random Forest puede sobreajustar sin optimización de hiperparámetros.
-Características Redundantes: Características con baja importancia podrían eliminarse para simplificar el modelo.
+El modelo **Random Forest** se desempeña mejor para clasificar productos por condición, logrando:
 
-Recomendaciones
+* **Accuracy:** 0.824
+* **F1 Score:** 0.824
 
-Optimización: Ajustar hiperparámetros de Random Forest con GridSearchCV.
-Evaluación Adicional: Usar ROC-AUC y matrices de confusión para clases desbalanceadas.
-Selección de Características: Eliminar características de baja importancia.
-Estrategias Comerciales: Ajustar precios según la condición, mejorar información de garantías y garantizar stock.
-Validación Externa: Probar el modelo con nuevos datos para confirmar generalización.
+Este modelo puede aplicarse para:
 
-Requisitos
-Instala las dependencias:
+* Mejorar las búsquedas del usuario
+* Optimizar la visibilidad de productos
+* Ajustar precios y estrategias de venta
+  
+![image](https://github.com/user-attachments/assets/e4dcb57b-2617-4499-a9ea-ae5166d5043c)
+
+---
+
+## ⚠️ Limitaciones
+
+* Posible **desbalance de clases**
+* **Sobreajuste** sin optimización
+* Algunas variables podrían ser eliminadas
+
+---
+
+## 💡 Recomendaciones
+
+* Usar `GridSearchCV` para afinar hiperparámetros
+* Incluir `ROC-AUC` y matriz de confusión
+* Evaluar con nuevos datos externos
+* Simplificar el modelo eliminando variables poco relevantes
+
+---
+
+## 🧪 Requisitos
+
+Instala las dependencias con:
+
+```bash
 pip install pandas numpy matplotlib seaborn scikit-learn xgboost
+```
 
-Instrucciones de Uso
+---
 
-Clona el repositorio:git clone <URL_DEL_REPOSITORIO>
+## 🚀 Instrucciones de Uso
+
+1. Clona el repositorio:
+
+```bash
+git clone https://github.com/luzangelacarabali/CommerceML.git
+```
+
+2. Entra al directorio:
+
+```bash
+cd CommerceML
+```
+
+3. Abre el notebook `02_model_training.ipynb` en Jupyter Notebook o JupyterLab.
+
+---
+
+## 👩‍💻 Autor
+
+**Luz Ángela Carabalí Mulato**
+📧 [@luzangelacarabli](https://github.com/luzangelacarabali)
+
+---
+
+Claro, aquí tienes la sección **Notas Adicionales** actualizada con la mención de la eliminación de los archivos:
+
+---
+
+## 📎 Notas Adicionales
+
+>  Los archivo `model/datos_limpios.csv` y `datos/MLA_100k.jsonlines` fueron eliminados debido a restricciones de tamaño en GitHub (>100 MB). Puedes solicitar una copia vía Drive .
 
 
-Instala las dependencias:pip install -r requirements.txt
 
 
-Abre el notebook 02_model_training.ipynb en Jupyter Notebook o JupyterLab.
-Ejecuta las celdas para reproducir el análisis.
 
-Autor
 
-Luz Ángela Carabalí Mulato (@luzangelacarabli)
 
-Remove-Item -Force model/datos_limpios.csv
