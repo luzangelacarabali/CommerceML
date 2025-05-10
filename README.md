@@ -19,7 +19,7 @@ Este proyecto aplica **aprendizaje automático** para predecir si un producto li
 ├── model/                           # Carpeta para modelos entrenados
 ├── data/                            # Carpeta para los datos utilizados
 ├── README.md                        # Descripción completa del proyecto
-├── requirements.txt                 # Lista de dependencias
+├── .gitignore                       # gitignore
 ````
 
 ---
